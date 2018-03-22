@@ -1,0 +1,2 @@
+class Agronomist < ApplicationRecord
+end

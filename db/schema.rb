@@ -10,7 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322012727) do
+ActiveRecord::Schema.define(version: 20180322061006) do
+
+  create_table "agronomists", force: :cascade do |t|
+    t.string "first_name", limit: 100
+    t.string "last_name", limit: 100
+    t.datetime "birthday"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contracts", force: :cascade do |t|
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.text "content"
+    t.integer "agronomist_id"
+    t.integer "farm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agronomist_id"], name: "index_contracts_on_agronomist_id"
+    t.index ["farm_id"], name: "index_contracts_on_farm_id"
+  end
+
+  create_table "farms", force: :cascade do |t|
+    t.string "name", limit: 100
+    t.datetime "bought_on"
+    t.integer "grower_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["grower_id"], name: "index_farms_on_grower_id"
+  end
 
   create_table "fields", force: :cascade do |t|
     t.string "name", limit: 100

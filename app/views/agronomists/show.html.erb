@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @agronomist.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @agronomist.last_name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @agronomist.birthday %>
+</p>
+
+<%= link_to 'Edit', edit_agronomist_path(@agronomist) %> |
+<%= link_to 'Back', agronomists_path %>
