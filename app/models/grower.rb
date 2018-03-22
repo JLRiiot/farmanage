@@ -1,0 +1,2 @@
+class Grower < ApplicationRecord
+end
