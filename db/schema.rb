@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322061006) do
+ActiveRecord::Schema.define(version: 20180322080335) do
 
   create_table "agronomists", force: :cascade do |t|
     t.string "first_name", limit: 100
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20180322061006) do
     t.string "area_unit", limit: 20
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "farm_id"
+    t.index ["farm_id"], name: "index_fields_on_farm_id"
   end
 
   create_table "growers", force: :cascade do |t|
