@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Starts at:</strong>
+  <%= @contract.starts_at %>
+</p>
+
+<p>
+  <strong>Ends at:</strong>
+  <%= @contract.ends_at %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @contract.content %>
+</p>
+
+<p>
+  <strong>Agronomist:</strong>
+  <%= @contract.agronomist %>
+</p>
+
+<p>
+  <strong>Farm:</strong>
+  <%= @contract.farm %>
+</p>
+
+<%= link_to 'Edit', edit_contract_path(@contract) %> |
+<%= link_to 'Back', contracts_path %>
