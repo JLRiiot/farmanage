@@ -1,5 +1,5 @@
 class Field < ApplicationRecord
-  belongs_to :farm
+  belongs_to :farm  # Adding a column farm_id
   has_one :grower, through: :farm
   
   validates :name, :area, :area_unit, presence: true

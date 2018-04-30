@@ -25,6 +25,17 @@
     <%= form.label :area_unit %>
     <%= form.text_field :area_unit, id: :field_area_unit %>
   </div>
+  
+  <div class="field">
+    <%= form.collection_select(
+      :farm_id,
+      @farms,
+      :id,
+      :name,
+      { :prompt => 'Please select a Farm', :select => @field.farm_id }, 
+      { }
+    ) %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

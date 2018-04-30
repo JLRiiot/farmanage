@@ -15,16 +15,19 @@ class FieldsController < ApplicationController
   # GET /fields/new
   def new
     @field = Field.new
+    @farms = Farm.all  # Despues puede ser filtrado por usuario.
   end
 
   # GET /fields/1/edit
   def edit
+    @farms = Farm.all
   end
 
   # POST /fields
   # POST /fields.json
   def create
     @field = Field.new(field_params)
+    @farms = Farm.all
 
     respond_to do |format|
       if @field.save
@@ -40,6 +43,7 @@ class FieldsController < ApplicationController
   # PATCH/PUT /fields/1
   # PATCH/PUT /fields/1.json
   def update
+    @farms = Farm.all
     respond_to do |format|
       if @field.update(field_params)
         format.html { redirect_to @field, notice: 'Field was successfully updated.' }
@@ -69,6 +73,6 @@ class FieldsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def field_params
-      params.require(:field).permit(:name, :area, :area_unit)
+      params.require(:field).permit(:name, :area, :area_unit, :farm_id)
     end
 end

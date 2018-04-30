@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+default_valid:
+  name: MyString
+  area: 0
+  area_unit: acres
+
 one:
   name: MyString
   area: 9.99
-  area_unit: MyString
+  area_unit: acres
 
 two:
   name: MyString
   area: 9.99
-  area_unit: MyString
+  area_unit: hectares

@@ -3,6 +3,7 @@ require 'test_helper'
 class FieldsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @field = fields(:one)
+    @farm = farms(:default_valid)
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class FieldsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create field" do
     assert_difference('Field.count') do
-      post fields_url, params: { field: { area: @field.area, area_unit: @field.area_unit, name: @field.name } }
+      post fields_url, params: { field: { area: @field.area, area_unit: @field.area_unit, name: @field.name, farm_id: @farm.id } }
     end
 
     assert_redirected_to field_url(Field.last)
@@ -34,7 +35,7 @@ class FieldsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update field" do
-    patch field_url(@field), params: { field: { area: @field.area, area_unit: @field.area_unit, name: @field.name } }
+    patch field_url(@field), params: { field: { area: @field.area, area_unit: @field.area_unit, name: @field.name, farm_id: @farm.id } }
     assert_redirected_to field_url(@field)
   end
 
